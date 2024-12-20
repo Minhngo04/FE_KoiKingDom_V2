@@ -1,0 +1,38 @@
+/* variables.scss */
+:root {
+  --background: #f6e8ea;
+  --primary: #5a0001;
+  --accent: #f45b69;
+  --text-in-background: #22181c;
+  --text-in-primary: #f6e8ea;
+  --text-in-accent: #22181c;
+  --base-font-size: 62.5%;
+  --font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  --main-background: #f6e8ea;
+
+  --buttonTextColor: #f6e8ea;
+  --secondary-color: rgb(90, 0, 1);
+  --text-color: rgb(90, 0, 1);
+  --border-color: rgb(244, 91, 105);
+  --font-size-label: 20px;
+  --font-size: 15px;
+  --font-title: 400 3.4rem Inter, sans-serif;
+}
+html {
+  font-size: var(--base-font-size);
+  font-size: 62.5%;
+  height: 100vh;
+  width: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.rdrDefinedRangesWrapper {
+  display: none;
+}

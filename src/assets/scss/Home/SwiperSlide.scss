@@ -1,0 +1,51 @@
+@use '../../../App.scss';
+
+.introduce-2 {
+  font-size: 4rem;
+  /* 40px ÷ 10 = 4rem */
+  text-align: center;
+
+  .imgslide {
+    width: 31rem;
+    /* 310px ÷ 10 = 31rem */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 0.8rem;
+    /* 8px ÷ 10 = 0.8rem */
+    background: var(--accent);
+    width: 5.2rem;
+    /* 52px ÷ 10 = 5.2rem */
+    height: 3.5rem;
+    /* 35px ÷ 10 = 3.5rem */
+    font-size: 1.6rem;
+    /* 16px ÷ 10 = 1.6rem */
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+      background-color: #f13030;
+    }
+
+    .icon {
+      color: var(--background);
+    }
+  }
+}
+
+.swiper-button-prev {
+  left: 1.3rem;
+  /* 13px ÷ 10 = 1.3rem */
+}
+
+.swiper-button-next {
+  right: 2rem;
+  /* 20px ÷ 10 = 2rem */
+}
