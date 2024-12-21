@@ -3,7 +3,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import '../assets/scss/Home/SwiperSlide.scss';
+import '../../assets/scss/Home/SwiperSlide.scss';
 import PropTypes from 'prop-types'; // Import PropTypes
 
 const SwiperSlideFunc = ({ text, images, slidesPerView = 3, autoplayDelay = 2500 }) => {

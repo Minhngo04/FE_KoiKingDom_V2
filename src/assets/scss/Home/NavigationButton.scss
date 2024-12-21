@@ -1,0 +1,19 @@
+@use '../../../App.scss';
+
+.navigation-button {
+  border-radius: 2.5rem;
+  min-height: 2.7rem;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: transparent;
+  color: var(--buttonTextColor);
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: #f45b69;
+  }
+}
+
+.navigation-button.active {
+  background-color: #f13030;
+}
