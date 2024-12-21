@@ -1,0 +1,21 @@
+@use '../../../App.scss';
+
+@mixin booking-filter {
+  border-radius: 1.2rem;
+  background-color: #f6e8ea;
+  padding: 2rem;
+  border: 0.1rem solid #f45b69;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+
+  .booking-main-content {
+    align-self: center;
+    margin-top: 12.5rem;
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 3.7rem;
+  }
+}

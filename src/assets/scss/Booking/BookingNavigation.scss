@@ -1,0 +1,37 @@
+@use '../../../App.scss';
+
+.page-title {
+  color: #5a0001;
+  text-align: center;
+  align-self: center;
+  margin-top: 83px;
+  font: var(--font-title);
+}
+
+.tour-types {
+  align-self: center;
+  display: flex;
+  max-width: 100%;
+  gap: 4rem 10rem;
+  color: #ffffff;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin: 6.8rem 0 0 2.7rem;
+  font: 700 1.6rem Inter, sans-serif;
+
+  .tour-type-button {
+    background-color: #f45b69;
+    padding: 1.9rem 4.7rem;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 24rem;
+
+    &:hover {
+      background-color: #f13030;
+    }
+  }
+}

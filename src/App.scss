@@ -37,3 +37,6 @@ body {
 .rdrDefinedRangesWrapper {
   display: none;
 }
+.rdrDateRangePickerWrapper {
+  position: absolute; /* Position it above other content */
+}

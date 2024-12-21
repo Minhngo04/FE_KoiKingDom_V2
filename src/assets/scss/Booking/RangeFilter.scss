@@ -1,0 +1,38 @@
+.range-filters {
+  border-radius: 1.2rem;
+  background-color: #f6e8ea;
+  padding: 2rem;
+  border: 0.1rem solid #f45b69;
+}
+
+.range-slider {
+  position: relative;
+
+  .custom-slider {
+    color: #f45b69;
+
+    .mui-box-root {
+      width: 200%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .MuiSlider-rail {
+      background-color: #f45b69;
+    }
+
+    .MuiSlider-track {
+      background-color: #5a0001;
+    }
+
+    .MuiSlider-thumb {
+      background-color: #5a0001;
+
+      &:hover {
+        box-shadow: 0px 0px 0px 8px rgba(245, 0, 87, 0.16);
+      }
+    }
+  }
+}

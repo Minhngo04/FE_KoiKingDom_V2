@@ -1,0 +1,14 @@
+.checkbox-container {
+  display: flex;
+  gap: 3.3rem;
+  align-items: center;
+  margin-top: 2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .checkbox-label-booking {
+    color: #22181c;
+  }
+}

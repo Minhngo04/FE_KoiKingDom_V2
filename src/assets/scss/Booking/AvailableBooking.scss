@@ -1,0 +1,52 @@
+@use '../../../App.scss';
+
+@mixin booking-filter {
+  border-radius: 1.2rem;
+  background-color: #f6e8ea;
+  padding: 2rem;
+  border: 0.1rem solid #f45b69;
+}
+
+.booking-filters {
+  .booking-filter-title {
+    color: var(--text-in-background);
+  }
+
+  .booking-date-filter {
+    @include booking-filter;
+
+    .date-range {
+      top: 39.5%;
+      z-index: 100;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.booking-tour-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  /* margin-bottom: 91px; */
+  height: 782px;
+}
+
+.icon-heart {
+  position: absolute;
+  color: #5a0001;
+  z-index: 10;
+  margin-left: 245px;
+  margin-top: -9px;
+}
+
+.booking-tour-wrapper {
+  position: relative; /* Để tạo bối cảnh cho `pagination-container` */
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}

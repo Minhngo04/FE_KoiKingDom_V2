@@ -1,13 +1,8 @@
 import { createRoot } from 'react-dom/client';
-// import App from './App.jsx';
-import HomePage from './pages/HomePage';
-import { BrowserRouter } from 'react-router-dom';
-import Header from '../src/components/Home/Header';
-import Footer from '../src/components/Home/Footer';
+import { StrictMode } from 'react';
+import App from './App.jsx';
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <Header />
-    <HomePage />
-    <Footer />
-  </BrowserRouter>,
+  <StrictMode>
+    <App />
+  </StrictMode>,
 );

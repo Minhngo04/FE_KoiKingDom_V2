@@ -1,5 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import AvailableBooking from '../src/components/Booking/AvailableBooking';
+import BookingPage from './pages/BookingPage';
+import CustomBooking from '../src/components/Booking/CustomBooking';
+import Header from '../src/components/Home/Header';
+import Footer from '../src/components/Home/Footer';
 import './App.scss';
 
 const NotFound = () => (
@@ -7,12 +13,20 @@ const NotFound = () => (
 );
 
 const App = () => (
-  <Routes>
-    <Route path="/" element={<App />}>
+  <BrowserRouter>
+    <Header />
+    <Routes>
       <Route index element={<HomePage />} />
+      <Route path="/tour" element={<BookingPage />}>
+        <Route index element={<AvailableBooking />} />
+        <Route path="available-tour" element={<AvailableBooking />} />
+        <Route path="custom-tour" element={<CustomBooking />} />
+      </Route>
+
       <Route path="*" element={<NotFound />} />
-    </Route>
-  </Routes>
+    </Routes>
+    <Footer />
+  </BrowserRouter>
 );
 
 export default App;

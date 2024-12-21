@@ -1,0 +1,23 @@
+.filter-section {
+  border-radius: 1.2rem;
+  background-color: #f6e8ea;
+  padding: 1rem 2rem;
+  border: 0.1rem solid #f45b69;
+
+  .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .filter-title {
+      color: var(--text-in-background);
+      font: 700 2.4rem Inter, sans-serif;
+    }
+
+    .filter-icon {
+      width: 2.8rem;
+      aspect-ratio: 1.04;
+    }
+  }
+}
