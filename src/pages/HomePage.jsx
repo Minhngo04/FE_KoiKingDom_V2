@@ -1,11 +1,10 @@
 import img_koitour from '../assets/images/koi-farm.jpg';
 import img_koifish from '../assets/images/Kohaku.jpg';
 import img_farm from '../assets/images/FarmImage/4.jpg';
+import SwiperSlideFunc from '../components/Home/SwiperSlide.jsx';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import '../assets/scss/Home/HomePage.scss';
-import SwiperSlideFunc from '../components/Home/SwiperSlide.jsx';
-import Header from '../components/Home/Header.jsx';
 const HomePage = () => {
   const images_tour = Array(8).fill(img_koitour);
   const images_koifish = Array(8).fill(img_koifish);
@@ -14,7 +13,6 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
       <div className="homepage">
         <div className="introduce-1">
           <div className="information">

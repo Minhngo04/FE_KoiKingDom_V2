@@ -1,0 +1,39 @@
+@use '../../../App.scss';
+
+@mixin font($weight: weight, $size: size) {
+  font-weight: $weight;
+  font-size: $size;
+}
+
+.footer-container {
+  background-color: var(--primary);
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 4.5rem;
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      color: var(--text-in-primary);
+      @include font(400, 1.4rem);
+
+      .link-title {
+        @include font(600, 1.6rem);
+      }
+
+      .phone,
+      .email {
+        margin-top: 3.6rem;
+        text-decoration: none;
+        color: inherit;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

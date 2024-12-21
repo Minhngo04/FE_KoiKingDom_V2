@@ -1,0 +1,40 @@
+@use '../../../App.scss';
+
+@mixin font($weight: weight, $size: size) {
+  font-weight: $weight;
+  font-size: $size;
+}
+
+.link-group {
+  color: rgba(246, 232, 234, 1);
+
+  @include font(400, 1.4rem);
+
+  .link-title {
+    @include font(600, 1.6rem);
+  }
+
+  .link {
+    margin-top: 3.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    @include font(400, 2.4rem);
+    color: var(--buttonIcon);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
