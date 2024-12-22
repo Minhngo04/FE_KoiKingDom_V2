@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AvailableBooking from '../src/components/Booking/AvailableBooking';
+import KoiBooking from '../src/components/Booking/KoiBooking';
 import BookingPage from './pages/BookingPage';
 import CustomBooking from '../src/components/Booking/CustomBooking';
 import Header from '../src/components/Home/Header';
@@ -21,6 +22,7 @@ const App = () => (
         <Route index element={<AvailableBooking />} />
         <Route path="available-tour" element={<AvailableBooking />} />
         <Route path="custom-tour" element={<CustomBooking />} />
+        <Route path="koi-order" element={<KoiBooking />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

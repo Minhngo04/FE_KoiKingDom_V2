@@ -1,0 +1,87 @@
+.tour-card {
+  .card-content {
+    padding: 20px;
+    border-bottom: 3px solid;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .price-info {
+        // Container for price, name, and type information
+
+        .price {
+          color: #f13030;
+          font-size: 17px;
+        }
+
+        .koi-name {
+          color: #22181c;
+          font-size: 15px;
+          margin-top: 10px;
+        }
+
+        .koi-type {
+          color: #22181c;
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+
+          .type-icon {
+            width: 24px;
+            aspect-ratio: 0.96;
+          }
+        }
+      }
+
+      .badges {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .best-seller {
+          background-color: #f45b69;
+          color: #f6e8ea;
+          padding: 11px 18px;
+          border-radius: 30px;
+          font-size: 11px;
+        }
+
+        .rating-wrapper {
+          display: flex;
+          gap: 4px;
+          align-items: center;
+          margin-top: 15px;
+
+          .rating-icon {
+            width: 25px;
+            aspect-ratio: 1.09;
+          }
+        }
+      }
+    }
+  }
+
+  .koi-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 9px;
+    margin-top: 18px;
+    .stat-item {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+
+      .stat-icon {
+        width: 24px;
+      }
+
+      .stat-value {
+        color: #22181c;
+        font-size: 16px;
+      }
+    }
+  }
+}

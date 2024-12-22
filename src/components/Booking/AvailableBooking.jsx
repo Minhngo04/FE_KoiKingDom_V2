@@ -45,26 +45,24 @@ const AvailableBooking = () => {
 
   return (
     <>
-      <aside className="available-booking">
-        <AsideFilter
-          filters={[{ title: 'Price', min: 0, max: 200 }]}
-          dateRange={true}
-          sections={[
-            {
-              title: 'Farm',
-              options: farmOptions,
-              checkedOptions: farmChecked,
-              onCheckboxChange: handleFarmCheckboxChange,
-            },
-            {
-              title: 'Koi Type',
-              options: koiTypeOptions,
-              checkedOptions: koiChecked,
-              onCheckboxChange: handleKoiCheckboxChange,
-            },
-          ]}
-        />
-      </aside>
+      <AsideFilter
+        filters={[{ title: 'Price', min: 0, max: 200 }]}
+        dateRange={true}
+        sections={[
+          {
+            title: 'Farm',
+            options: farmOptions,
+            checkedOptions: farmChecked,
+            onCheckboxChange: handleFarmCheckboxChange,
+          },
+          {
+            title: 'Koi Type',
+            options: koiTypeOptions,
+            checkedOptions: koiChecked,
+            onCheckboxChange: handleKoiCheckboxChange,
+          },
+        ]}
+      />
 
       <div className="booking-tour-wrapper">
         <section className="booking-tour-grid">

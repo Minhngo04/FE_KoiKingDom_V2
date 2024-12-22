@@ -18,7 +18,7 @@ const BookingNavigation = () => {
         break;
       case 'koiOrder':
         setPageTitle('ORDER KOI FISH');
-        navigate('/koiOrder');
+        navigate('/tour/koi-order');
         break;
       default:
         console.error('Unknown navigation type');
