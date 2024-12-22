@@ -27,7 +27,7 @@ const DateRange = () => {
     alignItems: 'center',
     padding: '2.1rem 2.8rem',
     border: '0.3rem solid #5a0001',
-    color: 'var(--text-in-background)', // Cần đảm bảo CSS biến này được định nghĩa
+    color: 'var(--text-in-background)',
     cursor: 'pointer',
     transition: 'border-color 0.3s ease',
   };

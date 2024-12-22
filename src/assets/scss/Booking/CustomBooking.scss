@@ -1,0 +1,101 @@
+@use '../../../App.scss';
+
+.form {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-weight: 700;
+    margin: auto;
+    padding-bottom: 37px;
+    background-color: var(--main-background);
+    font: var(--font-family-1);
+  }
+
+  &-title {
+    color: var(--secondary-color);
+    text-align: center;
+    align-self: center;
+    margin: 10.5rem 0 0 2.6rem;
+    font: var(--font-title);
+  }
+
+  &-section {
+    width: 92rem;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+}
+
+.input-label {
+  color: var(--text-color);
+  font-size: var(--font-size-label);
+}
+
+.framebox {
+  border-radius: 0.8rem;
+  background-color: rgb(246, 232, 234);
+  justify-content: space-between;
+  align-items: center;
+  border: 0.3rem solid rgb(90, 0, 1);
+  color: var(--text-in-background);
+  cursor: pointer;
+}
+
+.text-input {
+  background-color: var(--main-background);
+  color: var(--secondary-color);
+  font: var(--font-family-1);
+  width: 98.2%;
+  border: none;
+  padding: 16px 0px 16px 16px;
+  border-radius: 5px;
+  font-size: 22px;
+  outline: none;
+}
+
+.checkbox-grid {
+  display: flex;
+  gap: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.main-content-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  user-select: none;
+}
+.button {
+  text-align: center;
+  border: none;
+  cursor: pointer;
+
+  &.submit {
+    background-color: var(--secondary-color);
+    width: 925px;
+    max-width: 100%;
+    padding: 23px 70px;
+    margin: 54px auto 0;
+    color: var(--main-background);
+  }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  flex-grow: 1;
+  width: 138px;
+  margin: auto 0;
+  color: var(--text-color);
+  text-align: center;
+  font: var(--font-family-1);
+  font-size: var(--font-size);
+}
+.rdrDateRangePickerWrapper {
+  margin-top: 95px;
+}
