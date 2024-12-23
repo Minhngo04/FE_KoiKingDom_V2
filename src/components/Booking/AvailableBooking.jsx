@@ -62,6 +62,9 @@ const AvailableBooking = () => {
             onCheckboxChange: handleKoiCheckboxChange,
           },
         ]}
+        style={{
+          '--rdrDateRangePickerWrapper-margin': '0rem', // Sử dụng CSS variable nếu có
+        }}
       />
 
       <div className="booking-tour-wrapper">

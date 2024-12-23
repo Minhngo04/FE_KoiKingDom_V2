@@ -1,4 +1,17 @@
 import fixedImage from '../../src/assets/images/TourImage/10.jpg';
+export const users = [
+  {
+    id: '1',
+    firstName: 'John',
+    lastName: 'Doe',
+    phoneNumber: '1234567890',
+    gender: 'Male',
+    address: '123 Main St, New York, NY, USA',
+    avatar: '',
+    isBanned: false,
+  },
+];
+
 export const tours = [
   {
     price: 12345,

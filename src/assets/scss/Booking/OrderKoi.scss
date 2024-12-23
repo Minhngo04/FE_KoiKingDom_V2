@@ -1,7 +1,7 @@
 .tour-card {
   .card-content {
-    padding: 20px;
-    border-bottom: 3px solid;
+    padding: 2rem;
+    border-bottom: 0.3rem solid;
 
     .card-header {
       display: flex;
@@ -13,24 +13,24 @@
 
         .price {
           color: #f13030;
-          font-size: 17px;
+          font-size: 1.7rem;
         }
 
         .koi-name {
           color: #22181c;
-          font-size: 15px;
-          margin-top: 10px;
+          font-size: 1.5rem;
+          margin-top: 1rem;
         }
 
         .koi-type {
           color: #22181c;
-          font-size: 16px;
+          font-size: 1.6rem;
           display: flex;
           align-items: center;
-          gap: 7px;
+          gap: 0.7rem;
 
           .type-icon {
-            width: 24px;
+            width: 2.4rem;
             aspect-ratio: 0.96;
           }
         }
@@ -44,19 +44,19 @@
         .best-seller {
           background-color: #f45b69;
           color: #f6e8ea;
-          padding: 11px 18px;
-          border-radius: 30px;
-          font-size: 11px;
+          padding: 1.1rem 1.8rem;
+          border-radius: 3rem;
+          font-size: 1.1rem;
         }
 
         .rating-wrapper {
           display: flex;
-          gap: 4px;
+          gap: 0.4rem;
           align-items: center;
-          margin-top: 15px;
+          margin-top: 1.5rem;
 
           .rating-icon {
-            width: 25px;
+            width: 2.5rem;
             aspect-ratio: 1.09;
           }
         }
@@ -67,20 +67,20 @@
   .koi-stats {
     display: flex;
     justify-content: space-between;
-    padding: 0 9px;
-    margin-top: 18px;
+    padding: 0 0.9rem;
+    margin-top: 1.8rem;
     .stat-item {
       display: flex;
-      gap: 6px;
+      gap: 0.6rem;
       align-items: center;
 
       .stat-icon {
-        width: 24px;
+        width: 2.4rem;
       }
 
       .stat-value {
         color: #22181c;
-        font-size: 16px;
+        font-size: 1.6rem;
       }
     }
   }

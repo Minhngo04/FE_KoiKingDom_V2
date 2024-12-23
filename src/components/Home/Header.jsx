@@ -4,13 +4,14 @@ import UserPanel from './UserPanel.jsx';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import koiicon from '../../assets/images/koi-icon.png';
+import { users } from '../../data/mockAPI';
 import '../../assets/scss/Home/Header.scss';
 
 const navigationItems = ['Home', 'Booking', 'Information'];
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState('Home');
-
+  const currentUser = users[0];
   return (
     <>
       <header className="header-container">
@@ -25,7 +26,7 @@ const Header = () => {
               ))}
             </div>
             <div className="user-panel-wrapper">
-              <UserPanel brand={<FaRegUserCircle />} username="Minhngo" />
+              <UserPanel brand={<FaRegUserCircle />} username={currentUser.firstName + ' ' + currentUser.lastName} />
             </div>
           </div>
         </nav>

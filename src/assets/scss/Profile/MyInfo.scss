@@ -1,0 +1,57 @@
+@use '../../../App.scss';
+
+@mixin input-wrapper($flex) {
+  .input-wrapper {
+    flex: $flex;
+    position: relative;
+    border: 1px solid var(--border-color);
+    padding: 2rem 1.1rem;
+
+    .input-label {
+      position: absolute;
+      top: -0.8rem;
+      left: 0.7rem;
+      background-color: var(--background);
+      padding: 0 0.7rem;
+      color: var(--accent);
+      font: 700 2.1rem Inter, sans-serif;
+    }
+
+    .input-field {
+      width: 100%;
+      border: none;
+      background: transparent;
+      font: 400 1.6rem Inter, sans-serif;
+      padding: 0.8rem 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.profile-form {
+  border-radius: 1rem;
+  padding: 0 8rem;
+  width: 100%;
+  border: 0.1rem solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  .info-title {
+    color: var(--text-tittle);
+    margin-top: 6rem;
+    text-align: center;
+    align-self: center;
+    font: var(--font-title);
+  }
+
+  .form-row {
+    display: flex;
+    gap: 0.8rem;
+    @include input-wrapper(1);
+  }
+
+  @include input-wrapper(0);
+}

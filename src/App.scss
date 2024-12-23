@@ -13,8 +13,8 @@
 
   --buttonTextColor: #f6e8ea;
   --buttonIcon: #f6e8ea;
-  --secondary-color: rgb(90, 0, 1);
-  --text-color: rgb(90, 0, 1);
+  --button: rgb(90, 0, 1);
+  --text-tittle: rgb(90, 0, 1);
   --border-color: rgb(244, 91, 105);
   --font-size-label: 20px;
   --font-size: 15px;
@@ -38,5 +38,11 @@ body {
   display: none;
 }
 .rdrDateRangePickerWrapper {
-  position: absolute; /* Position it above other content */
+  position: absolute;
+}
+.booking-date-filter {
+  .rdrDateRangePickerWrapper {
+    position: absolute;
+    margin-top: 0rem;
+  }
 }

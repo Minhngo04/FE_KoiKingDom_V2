@@ -1,10 +1,10 @@
 @use '../../../App.scss';
 
 .page-title {
-  color: #5a0001;
+  color: var(--text-tittle);
   text-align: center;
   align-self: center;
-  margin-top: 83px;
+  margin-top: 8.3rem;
   font: var(--font-title);
 }
 

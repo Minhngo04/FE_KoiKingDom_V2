@@ -18,9 +18,9 @@
     .date-range {
       top: 39.5%;
       z-index: 100;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     }
   }
 }
@@ -29,16 +29,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  /* margin-bottom: 91px; */
-  height: 782px;
+  /* margin-bottom: 9.1rem; */
+  height: 78.2rem;
 }
 
 .icon-heart {
   position: absolute;
   color: #5a0001;
   z-index: 10;
-  margin-left: 245px;
-  margin-top: -9px;
+  margin-left: 24.5rem;
+  margin-top: -0.9rem;
 }
 
 .booking-tour-wrapper {
@@ -48,5 +48,5 @@
 .pagination-container {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 2rem 0;
 }

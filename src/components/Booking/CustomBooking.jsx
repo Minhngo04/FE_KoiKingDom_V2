@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from './Button';
+import Button from '../Button';
 import Checkbox from './Checkbox';
 import '../../assets/scss/Booking/CustomBooking.scss';
 import { RiCheckboxBlankLine } from 'react-icons/ri';

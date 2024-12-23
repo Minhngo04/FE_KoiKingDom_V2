@@ -15,7 +15,7 @@ export const KoiBooking = () => {
   const [koiTypeChecked, setKoiTypeChecked] = useState([false, false, false]);
   const koiTypeOptions = ['name checkbox', 'name checkbox', 'name checkbox'];
   const [currentPage, setCurrentPage] = useState(1);
-  const koisPerPage = 6; // Số tour hiển thị trên mỗi trang
+  const koisPerPage = 6;
 
   const handleKoiTypeCheckboxChange = (index) => {
     const updatedChecked = [...koiTypeChecked];
