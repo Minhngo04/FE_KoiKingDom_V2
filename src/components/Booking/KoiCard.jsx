@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../../assets/scss/Booking/OrderKoi.scss';
+import '../../assets/scss/Booking/KoiBooking.scss';
 import { IoIosStar } from 'react-icons/io';
 import { GiCirclingFish } from 'react-icons/gi';
 import { FaWeightHanging, FaRuler } from 'react-icons/fa';

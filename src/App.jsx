@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import MyCard from '../src/components/Profile/myCard.jsx';
 import MyInfo from '../src/components/Profile/MyInfo';
 import AvailableBooking from '../src/components/Booking/AvailableBooking';
 import KoiBooking from '../src/components/Booking/KoiBooking';
@@ -27,6 +28,8 @@ const App = () => (
       </Route>
       <Route path="/profile-page" element={<ProfilePage />}>
         <Route index element={<MyInfo />} />
+        <Route path="myProfile" element={<MyInfo />} />
+        <Route path="myCard" element={<MyCard />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

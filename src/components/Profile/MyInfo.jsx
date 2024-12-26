@@ -68,167 +68,169 @@ const MyInfo = () => {
   };
 
   return (
-    <form className="profile-form">
-      <h1 className="info-title">My Profile</h1>
+    <>
+      <form className="profile-form">
+        <h1 className="info-title">My Profile</h1>
 
-      <div className="form-row">
-        <div className="input-wrapper">
-          <label htmlFor="lastName" className="input-label">
-            Last name
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            className="input-field"
-            value={userInfo.lastName}
-            onChange={handleChange}
-            readOnly={!isEditing} // Chỉ cho phép chỉnh sửa nếu ở chế độ chỉnh sửa
-          />
+        <div className="form-row">
+          <div className="input-wrapper">
+            <label htmlFor="lastName" className="input-label">
+              Last name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              className="input-field"
+              value={userInfo.lastName}
+              onChange={handleChange}
+              readOnly={!isEditing} // Chỉ cho phép chỉnh sửa nếu ở chế độ chỉnh sửa
+            />
+          </div>
+
+          <div className="input-wrapper">
+            <label htmlFor="firstName" className="input-label">
+              First name
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              className="input-field"
+              value={userInfo.firstName}
+              onChange={handleChange}
+              readOnly={!isEditing}
+            />
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="input-wrapper">
+            <label htmlFor="phoneNumber" className="input-label">
+              Phone Numbers
+            </label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              className="input-field"
+              value={userInfo.phoneNumber}
+              onChange={handleChange}
+              readOnly={!isEditing}
+            />
+          </div>
+
+          <div className="input-wrapper">
+            <label htmlFor="gender" className="input-label">
+              Gender
+            </label>
+            <select
+              id="gender"
+              className="input-field"
+              value={userInfo.gender.toLowerCase()}
+              onChange={handleChange}
+              disabled={!isEditing} // Không cho chỉnh sửa nếu không ở chế độ chỉnh sửa
+            >
+              <option value="">Select gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
         </div>
 
         <div className="input-wrapper">
-          <label htmlFor="firstName" className="input-label">
-            First name
+          <label htmlFor="address" className="input-label">
+            Address
           </label>
           <input
             type="text"
-            id="firstName"
+            id="address"
             className="input-field"
-            value={userInfo.firstName}
+            value={`${userInfo.address || ''} ${provinces.find((p) => p.code === selectedProvince)?.name || ''} ${
+              districts.find((d) => d.code === selectedDistrict)?.name || ''
+            } ${wards.find((w) => w.code === selectedWard)?.name || ''}`.trim()}
             onChange={handleChange}
             readOnly={!isEditing}
           />
         </div>
-      </div>
-
-      <div className="form-row">
-        <div className="input-wrapper">
-          <label htmlFor="phoneNumber" className="input-label">
-            Phone Numbers
-          </label>
-          <input
-            type="tel"
-            id="phoneNumber"
-            className="input-field"
-            value={userInfo.phoneNumber}
-            onChange={handleChange}
-            readOnly={!isEditing}
-          />
-        </div>
-
-        <div className="input-wrapper">
-          <label htmlFor="gender" className="input-label">
-            Gender
-          </label>
-          <select
-            id="gender"
-            className="input-field"
-            value={userInfo.gender.toLowerCase()}
-            onChange={handleChange}
-            disabled={!isEditing} // Không cho chỉnh sửa nếu không ở chế độ chỉnh sửa
-          >
-            <option value="">Select gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-      </div>
-
-      <div className="input-wrapper">
-        <label htmlFor="address" className="input-label">
-          Address
-        </label>
-        <input
-          type="text"
-          id="address"
-          className="input-field"
-          value={`${userInfo.address || ''} ${provinces.find((p) => p.code === selectedProvince)?.name || ''} ${
-            districts.find((d) => d.code === selectedDistrict)?.name || ''
-          } ${wards.find((w) => w.code === selectedWard)?.name || ''}`.trim()}
-          onChange={handleChange}
-          readOnly={!isEditing}
-        />
-      </div>
-      <div className="form-row" style={{ display: isEditing === true ? '' : 'none' }}>
-        <div className="input-wrapper">
-          <label htmlFor="address" className="input-label">
-            Tỉnh:
-          </label>
-          <select className="input-field" onChange={(e) => handleProvinceChange(e.target.value)} defaultValue="">
-            <option value="" disabled>
-              Chọn tỉnh
-            </option>
-            {provinces.map((province) => (
-              <option key={province.code} value={province.code}>
-                {province.name}
+        <div className="form-row" style={{ display: isEditing === true ? '' : 'none' }}>
+          <div className="input-wrapper">
+            <label htmlFor="address" className="input-label">
+              Tỉnh:
+            </label>
+            <select className="input-field" onChange={(e) => handleProvinceChange(e.target.value)} defaultValue="">
+              <option value="" disabled>
+                Chọn tỉnh
               </option>
-            ))}
-          </select>
-        </div>
-        {/* Dropdown danh sách huyện */}
+              {provinces.map((province) => (
+                <option key={province.code} value={province.code}>
+                  {province.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          {/* Dropdown danh sách huyện */}
 
-        <div className="input-wrapper">
-          <label htmlFor="address" className="input-label">
-            Huyện:
-          </label>
-          <select className="input-field" onChange={(e) => handleDistrictChange(e.target.value)} defaultValue="">
-            <option value="" disabled>
-              Chọn huyện
-            </option>
-            {districts.map((district) => (
-              <option key={district.code} value={district.code}>
-                {district.name}
+          <div className="input-wrapper">
+            <label htmlFor="address" className="input-label">
+              Huyện:
+            </label>
+            <select className="input-field" onChange={(e) => handleDistrictChange(e.target.value)} defaultValue="">
+              <option value="" disabled>
+                Chọn huyện
               </option>
-            ))}
-          </select>
-        </div>
+              {districts.map((district) => (
+                <option key={district.code} value={district.code}>
+                  {district.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <div className="input-wrapper">
-          <label htmlFor="address" className="input-label">
-            Xã:
-          </label>
-          <select className="input-field" defaultValue="">
-            <option value="" disabled>
-              Chọn xã
-            </option>
-            {wards.map((ward) => (
-              <option key={ward.code} value={ward.code}>
-                {ward.name}
+          <div className="input-wrapper">
+            <label htmlFor="address" className="input-label">
+              Xã:
+            </label>
+            <select className="input-field" defaultValue="">
+              <option value="" disabled>
+                Chọn xã
               </option>
-            ))}
-          </select>
+              {wards.map((ward) => (
+                <option key={ward.code} value={ward.code}>
+                  {ward.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-      </div>
-      {!isEditing ? (
-        <div
-          style={{
-            display: 'flex',
-          }}
-        >
-          <Button
-            child="EDIT"
-            variant="submit"
-            onClick={handleEdit}
-            style={{
-              width: '100%',
-            }}
-          />
-        </div>
-      ) : (
-        <>
+        {!isEditing ? (
           <div
             style={{
               display: 'flex',
-              gap: '84px',
             }}
           >
-            <Button child="Save" variant="submit" onClick={handleSave} />
-            <Button child="Cancel" variant="submit" onClick={handleCancel} />
+            <Button
+              child="EDIT"
+              variant="submit"
+              onClick={handleEdit}
+              style={{
+                width: '100%',
+              }}
+            />
           </div>
-        </>
-      )}
-    </form>
+        ) : (
+          <>
+            <div
+              style={{
+                display: 'flex',
+                gap: '84px',
+              }}
+            >
+              <Button child="Save" variant="submit" onClick={handleSave} />
+              <Button child="Cancel" variant="submit" onClick={handleCancel} />
+            </div>
+          </>
+        )}
+      </form>
+    </>
   );
 };
 

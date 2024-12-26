@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import KoiCard from './KoiCard.jsx';
-import '../../assets/scss/Booking/OrderKoi.scss';
+import '../../assets/scss/Booking/KoiBooking.scss';
 import AsideFilter from './AsideFilter.jsx';
 import { kois } from '../../data/mockAPI.js';
 import Pagination from '@mui/material/Pagination';

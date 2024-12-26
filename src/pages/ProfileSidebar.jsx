@@ -3,8 +3,8 @@ import '../assets/scss/Booking/ProfileSidebar.scss';
 const ProfileSidebar = () => {
   const navigate = useNavigate();
   const menuItems = [
-    { label: 'Profile', id: 'profile-details', path: '/myProfile' },
-    { label: 'Add To Cart', id: 'cart', path: '/myCard' },
+    { label: 'Profile', id: 'profile-details', path: '/profile-page/myProfile' },
+    { label: 'Add To Cart', id: 'cart', path: '/profile-page/myCard' },
     { label: 'Farourite', id: 'favorites' },
     { label: 'My Booking', id: 'bookings', path: '/myBooking' },
     { label: 'My Koi Fish', id: 'koi', path: '/myKoiOrder' },

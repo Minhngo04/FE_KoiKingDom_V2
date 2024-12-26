@@ -20,7 +20,12 @@ const Header = () => {
             <div className="brand-name">KOIKINGDOM</div>
             <div className="button">
               {navigationItems.map((item) => (
-                <Link key={item} to={item === 'Booking' ? '/tour' : '/'} onClick={() => setActiveItem(item)}>
+                <Link
+                  type="button"
+                  key={item}
+                  to={item === 'Booking' ? '/tour' : '/'}
+                  onClick={() => setActiveItem(item)}
+                >
                   <NavigationButton label={item} isActive={activeItem === item} />
                 </Link>
               ))}
