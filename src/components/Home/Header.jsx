@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import NavigationButton from './NavigationButton.jsx';
 import UserPanel from './UserPanel.jsx';
 import { FaRegUserCircle } from 'react-icons/fa';
@@ -9,9 +10,9 @@ import '../../assets/scss/Home/Header.scss';
 
 const navigationItems = ['Home', 'Booking', 'Information'];
 
-const Header = () => {
+const Header = ({ currentUser, setCurrentUser }) => {
   const [activeItem, setActiveItem] = useState('Home');
-  const currentUser = users[0];
+
   return (
     <>
       <header className="header-container">
@@ -20,18 +21,16 @@ const Header = () => {
             <div className="brand-name">KOIKINGDOM</div>
             <div className="button">
               {navigationItems.map((item) => (
-                <Link
-                  type="button"
-                  key={item}
-                  to={item === 'Booking' ? '/tour' : '/'}
-                  onClick={() => setActiveItem(item)}
-                >
+                <Link key={item} to={item === 'Booking' ? '/tour' : '/'} onClick={() => setActiveItem(item)}>
                   <NavigationButton label={item} isActive={activeItem === item} />
                 </Link>
               ))}
             </div>
             <div className="user-panel-wrapper">
-              <UserPanel brand={<FaRegUserCircle />} username={currentUser.firstName + ' ' + currentUser.lastName} />
+              <UserPanel
+                brand={<FaRegUserCircle />}
+                username={currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : 'Guest'}
+              />
             </div>
           </div>
         </nav>
@@ -42,5 +41,8 @@ const Header = () => {
     </>
   );
 };
-
+Header.propTypes = {
+  currentUser: PropTypes.object.isRequired,
+  setCurrentUser: PropTypes.func.isRequired,
+};
 export default Header;

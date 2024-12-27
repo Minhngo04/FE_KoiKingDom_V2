@@ -11,7 +11,9 @@ const UserPanel = ({ brand, username }) => {
       case 'profile':
         navigate('/profile-page');
         break;
-      // Add other cases as needed
+      case 'login':
+        navigate('/login-page');
+        break;
       default:
         break;
     }
@@ -19,7 +21,10 @@ const UserPanel = ({ brand, username }) => {
 
   return (
     <div className="user-panel" onMouseEnter={() => setShowTooltip(true)} onMouseLeave={() => setShowTooltip(false)}>
-      <div className="user-brand" onClick={() => handleNavigation('profile')}>
+      <div
+        className="user-brand"
+        onClick={username !== 'Guest' ? () => handleNavigation('profile') : () => handleNavigation('login')}
+      >
         {brand && <span className="icon">{brand}</span>}
       </div>
       {showTooltip && <div className="tooltip">{username || 'Người dùng'}</div>}

@@ -1,20 +1,15 @@
 import { useState, useEffect } from 'react';
 import '../../assets/scss/Profile/MyInfo.scss';
-import { users } from '../../data/mockAPI';
 import Button from '../Button';
 import { getProvinces, getDistrictsByProvince, getWardsByDistrict } from '../../services/apiAddress';
-const MyInfo = () => {
-  const currentUser = users[0];
+const MyInfo = ({ currentUser }) => {
   const [isEditing, setIsEditing] = useState(false); // State để theo dõi chế độ chỉnh sửa
-  const [userInfo, setUserInfo] = useState(currentUser); // State để lưu thông tin người dùng khi chỉnh sửa
+  const [userInfo, setUserInfo] = useState({ ...currentUser }); // State để lưu thông tin người dùng khi chỉnh sửa
 
   // Hàm để thay đổi giá trị khi người dùng chỉnh sửa
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setUserInfo((prevInfo) => ({
-      ...prevInfo,
-      [id]: value,
-    }));
+    setUserInfo((prev) => ({ ...prev, [id]: value }));
   };
 
   // Hàm để bật/tắt chế độ chỉnh sửa
@@ -25,7 +20,7 @@ const MyInfo = () => {
   // Hàm để hủy chỉnh sửa
   const handleCancel = () => {
     setIsEditing(false);
-    setUserInfo(currentUser); // Đặt lại giá trị ban đầu nếu hủy
+    setUserInfo({ ...currentUser }); // Đặt lại giá trị ban đầu nếu hủy
   };
 
   // Hàm để lưu thông tin sau khi chỉnh sửa
@@ -55,16 +50,16 @@ const MyInfo = () => {
   // Lấy danh sách huyện khi chọn tỉnh
   const handleProvinceChange = async (provinceCode) => {
     setSelectedProvince(provinceCode);
-    setSelectedDistrict(null);
-    setSelectedWard(null);
-    setDistricts(await getDistrictsByProvince(provinceCode));
+    const districtData = await getDistrictsByProvince(provinceCode);
+    setDistricts(districtData);
+    setWards([]); // Reset wards when province changes
   };
 
   // Lấy danh sách xã khi chọn huyện
   const handleDistrictChange = async (districtCode) => {
     setSelectedDistrict(districtCode);
-    setSelectedWard(null);
-    setWards(await getWardsByDistrict(districtCode));
+    const wardData = await getWardsByDistrict(districtCode);
+    setWards(wardData);
   };
 
   return (
@@ -124,7 +119,7 @@ const MyInfo = () => {
             <select
               id="gender"
               className="input-field"
-              value={userInfo.gender.toLowerCase()}
+              value={userInfo.gender}
               onChange={handleChange}
               disabled={!isEditing} // Không cho chỉnh sửa nếu không ở chế độ chỉnh sửa
             >

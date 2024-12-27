@@ -211,28 +211,28 @@ export const myCards = [
     departureLocation: 'Hạ Long',
     bookingDate: '15-10-2024',
   },
-  // {
-  //   id: 3,
-  //   tourId: 3,
-  //   departureLocation: 'Nha Trang',
-  //   bookingDate: '20-10-2024',
-  // },
-  // {
-  //   id: 4,
-  //   tourId: 4,
-  //   departureLocation: 'Sapa',
-  //   bookingDate: '25-10-2024',
-  // },
-  // {
-  //   id: 5,
-  //   tourId: 5,
-  //   departureLocation: 'Phú Quốc',
-  //   bookingDate: '01-11-2024',
-  // },
-  // {
-  //   id: 6,
-  //   tourId: 6,
-  //   departureLocation: 'Hội An',
-  //   bookingDate: '05-11-2024',
-  // },
+  {
+    id: 3,
+    tourId: 3,
+    departureLocation: 'Nha Trang',
+    bookingDate: '20-10-2024',
+  },
+  {
+    id: 4,
+    tourId: 4,
+    departureLocation: 'Sapa',
+    bookingDate: '25-10-2024',
+  },
+  {
+    id: 5,
+    tourId: 5,
+    departureLocation: 'Phú Quốc',
+    bookingDate: '01-11-2024',
+  },
+  {
+    id: 6,
+    tourId: 6,
+    departureLocation: 'Hội An',
+    bookingDate: '05-11-2024',
+  },
 ];

@@ -1,0 +1,250 @@
+@use '../../../App.scss';
+@mixin input-wrapper {
+  flex: 1 1;
+  position: relative;
+  border: 0.1rem solid var(--background);
+
+  .input-label {
+    position: absolute;
+    top: -0.8rem;
+    left: 0.7rem;
+    background-color: var(--primary);
+    padding: 0 0.7rem;
+    color: var(--text-in-primary);
+    font-size: 1.5rem;
+  }
+
+  .input-field {
+    border: none;
+    background: transparent;
+    font: 400 1.6rem Inter, sans-serif;
+    height: 3.8rem;
+    color: var(--text-in-primary);
+    position: relative;
+    width: 100%;
+    padding-left: 0.6rem;
+  }
+
+  .eye-icon-container {
+    position: absolute;
+    right: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .eye-icon {
+    color: var(--buttonIcon);
+    background: var(--primary);
+    width: 3.3rem;
+  }
+
+  .input-field option {
+    background-color: #22181c;
+    color: white;
+    padding: 0.8rem;
+    margin: 0;
+  }
+
+  .input-field:focus {
+    outline: none;
+  }
+
+  .input-field-email,
+  .input-field-password {
+    width: 98%;
+  }
+}
+
+@mixin register-button {
+  width: 43.7rem;
+  height: 3.5rem;
+  left: 0.606rem;
+  border-radius: 0.5rem;
+  position: relative;
+  border: 0.1rem #f6e8ea solid;
+}
+
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+
+  .auth-image {
+    width: 44.2rem;
+    position: relative;
+    left: 0.125rem;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+  }
+
+  .register-form-container {
+    background: var(--primary);
+    padding: 3.2rem;
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+
+    .register-form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+
+      .auth-logo {
+        height: 10rem;
+      }
+
+      .tittle {
+        color: var(--text-in-primary);
+        font-size: 2rem;
+      }
+
+      .container-registerform {
+        display: flex;
+        flex-direction: column;
+        gap: 2.1rem;
+        width: 43.7rem;
+
+        .form-row {
+          display: flex;
+          gap: 0.8rem;
+
+          .input-wrapper {
+            @include input-wrapper;
+          }
+        }
+
+        .input-wrapper {
+          @include input-wrapper;
+        }
+      }
+
+      .authentication-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        .auth-header {
+          width: 45rem;
+          height: 2rem;
+          position: relative;
+          left: 1.406rem;
+
+          .remember-me,
+          .forgot-password {
+            color: var(--background);
+            font-size: 1.2rem;
+            font-family: 'Poppins';
+            font-weight: 500;
+            word-wrap: break-word;
+            position: absolute;
+          }
+
+          .remember-me {
+            width: 12rem;
+            left: 3.1rem;
+            top: 0.5rem;
+          }
+
+          .forgot-password {
+            width: 15rem;
+            left: 27rem;
+            top: 0.5rem;
+            text-align: right;
+          }
+
+          .separator-line {
+            width: 2rem;
+            height: 2rem;
+            position: relative;
+            color: #f6e8ea;
+          }
+        }
+
+        .account-link {
+          width: 100%;
+          height: 1.5rem;
+          position: relative;
+          font-family: 'Poppins';
+          font-weight: 500;
+          text-align: center;
+
+          span {
+            color: #f6e8ea;
+            font-size: 1.5rem;
+          }
+
+          .sign-up-link {
+            color: #ff8682;
+            margin-left: 1rem;
+            cursor: pointer;
+          }
+        }
+
+        .default-register-button {
+          @include register-button;
+          color: white;
+          font-size: 1.9rem;
+          text-align: center;
+        }
+
+        .social-register {
+          width: 45rem;
+          height: 2.5rem;
+          position: relative;
+          left: 0;
+          justify-items: center;
+
+          .social-register-text {
+            width: 10rem;
+            text-align: center;
+            color: #f6e8ea;
+            font-size: 1.5rem;
+            font-family: 'Poppins';
+            font-weight: 500;
+          }
+
+          .separator {
+            width: 10rem;
+            height: 0;
+            position: absolute;
+            border: 0.1rem #f6e8ea solid;
+          }
+
+          .left {
+            margin-left: -11.4rem;
+            margin-top: 0.8rem;
+          }
+
+          .right {
+            margin-left: 1.4rem;
+            margin-top: 0.8rem;
+          }
+        }
+
+        .google-register-button {
+          @include register-button;
+          justify-content: center;
+          display: flex;
+
+          .google-register-icons {
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 0.6rem;
+
+            .icon-google {
+              height: 2.4rem;
+              position: absolute;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
