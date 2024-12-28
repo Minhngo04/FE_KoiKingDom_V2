@@ -6,11 +6,14 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FaGoogle } from 'react-icons/fa6';
 import { GrCheckbox } from 'react-icons/gr';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { users } from '../data/mockAPI';
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   // Hàm xử lý khi click vào icon mắt
   const togglePasswordVisibility = (type) => {
     switch (type) {
@@ -19,6 +22,36 @@ const LoginPage = () => {
         break;
       default:
         break;
+    }
+  };
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      );
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleLogin();
+    }
+  };
+  const handleLogin = async () => {
+    if (!validateEmail(email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    if (!password) {
+      toast.error('Password cannot be empty.');
+      return;
+    }
+    const user = users.find((user) => user.email === email && user.password === password);
+    if (user) {
+      toast.success('Login successful!');
+      navigate('/');
+    } else {
+      toast.error('Invalid email or password.');
     }
   };
 
@@ -45,7 +78,14 @@ const LoginPage = () => {
                 <label htmlFor="email" className="input-label">
                   Email
                 </label>
-                <input type="text" id="email" className="input-field input-field-email" />
+                <input
+                  type="text"
+                  id="email"
+                  className="input-field input-field-email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  onKeyDown={(event) => handleKeyDown(event)}
+                />
               </div>
 
               <div className="input-wrapper">
@@ -56,6 +96,8 @@ const LoginPage = () => {
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   className="input-field input-field-password"
+                  onChange={(event) => setPassword(event.target.value)}
+                  onKeyDown={(event) => handleKeyDown(event)}
                 />
                 <div className="eye-icon-container" onClick={() => togglePasswordVisibility('password')}>
                   {showPassword ? (
@@ -78,7 +120,9 @@ const LoginPage = () => {
                   Sign Up
                 </span>
               </div>
-              <div className="default-login-button">Sign in</div>
+              <butoon className="default-login-button" onClick={() => handleLogin()}>
+                LOGIN
+              </butoon>
               <div className="social-login">
                 <div className="social-login-text">
                   <span className="separator left" />

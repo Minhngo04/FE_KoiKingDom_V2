@@ -13,6 +13,7 @@ import CustomBooking from '../src/components/Booking/CustomBooking';
 import Header from '../src/components/Home/Header';
 import Footer from '../src/components/Home/Footer';
 import { users } from './data/mockAPI';
+import { toast, ToastContainer } from 'react-toastify';
 import './App.scss';
 
 const NotFound = () => <div className="container mt-3 alert alert-danger">404. Page not found.</div>;
@@ -29,37 +30,43 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      {/* Header nhận currentUser và setCurrentUser */}
-      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      <Routes>
-        {/* Trang chính */}
-        <Route index element={<HomePage />} />
+    <>
+      <BrowserRouter>
+        {/* Header nhận currentUser và setCurrentUser */}
+        <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <Routes>
+          {/* Trang chính */}
+          <Route index element={<HomePage />} />
 
-        {/* Các trang liên quan đến Booking */}
-        <Route path="/tour" element={<BookingPage />}>
-          <Route index element={<AvailableBooking />} />
-          <Route path="available-tour" element={<AvailableBooking />} />
-          <Route path="custom-tour" element={<CustomBooking />} />
-          <Route path="koi-order" element={<KoiBooking />} />
-        </Route>
+          {/* Các trang liên quan đến Booking */}
+          <Route path="/tour" element={<BookingPage />}>
+            <Route index element={<AvailableBooking />} />
+            <Route path="available-tour" element={<AvailableBooking />} />
+            <Route path="custom-tour" element={<CustomBooking />} />
+            <Route path="koi-order" element={<KoiBooking />} />
+          </Route>
 
-        {/* Các trang liên quan đến hồ sơ người dùng */}
-        <Route path="/profile-page" element={<ProfilePage currentUser={currentUser} setCurrentUser={setCurrentUser} />}>
-          <Route index element={<MyInfo currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
-          <Route path="myProfile" element={<MyInfo currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
-          <Route path="myCard" element={<MyCard />} />
-        </Route>
+          {/* Các trang liên quan đến hồ sơ người dùng */}
+          <Route
+            path="/profile-page"
+            element={<ProfilePage currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+          >
+            <Route index element={<MyInfo currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+            <Route path="myProfile" element={<MyInfo currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+            <Route path="myCard" element={<MyCard />} />
+          </Route>
 
-        {/* Trang lỗi 404 */}
-        <Route path="*" element={<NotFound />} />
+          {/* Trang lỗi 404 */}
+          <Route path="*" element={<NotFound />} />
 
-        <Route path="/login-page" element={<LoginPage />} />
-        <Route path="/register-page" element={<RegisterPage />} />
-      </Routes>
-      {/* Footer */}
-      <Footer />
-    </BrowserRouter>
+          <Route path="/login-page" element={<LoginPage />} />
+          <Route path="/register-page" element={<RegisterPage />} />
+        </Routes>
+        {/* Footer */}
+        <Footer />
+      </BrowserRouter>
+      <ToastContainer />
+    </>
   );
 };
 
